@@ -10,7 +10,6 @@ on:
 env:
   EpNum: ${{ github.event.inputs.EpCode }}
   RCLONE_CONFIG_URL: ${{ secrets.RCLONE_CONFIG_URL }}
-  TRANS01LOADER_URL: ${{ secrets.TRANS01LOADER_URL }}
 
 jobs:
   build:
@@ -21,4 +20,4 @@ jobs:
       - name: "Transload MLB"
         run: |
           mkdir -p ~/job && cd ~/job/
-          curl -sL "${TRANS01LOADER_URL}" | bash
+          ./transload_mlb_S01.sh
