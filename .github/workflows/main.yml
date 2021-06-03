@@ -19,5 +19,4 @@ jobs:
 
       - name: "Transload MLB"
         run: |
-          mkdir -p ~/job && cd ~/job/
           ./transload_mlb_S01.sh

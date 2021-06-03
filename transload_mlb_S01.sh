@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p ~/job && cd ~/job/
+
 printf "\nGetting Encoder Tools...\n"
 wget -q "https://gdrive.phantomzone.workers.dev/0:/ffmpeg_SlimStaticBuild/ffmpeg"
 wget -q "https://gdrive.phantomzone.workers.dev/0:/NeroAACCodec/linux/neroAacEnc"
