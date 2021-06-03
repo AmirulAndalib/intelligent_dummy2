@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      EpCode:
+        description: "Episode Number, {01..26}"
+        required: true
+
+env:
+  EpNum: ${{ github.event.inputs.EpCode }}
+  RCLONE_CONFIG_URL: ${{ secrets.RCLONE_CONFIG_URL }}
+  TRANS01LOADER_URL: ${{ secrets.TRANS01LOADER_URL }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: "Transload MLB"
+        run: |
+          mkdir -p ~/job && cd ~/job/
+          curl -sL "${TRANS01LOADER_URL}" | bash
