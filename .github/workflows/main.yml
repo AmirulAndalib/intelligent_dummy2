@@ -20,5 +20,5 @@ jobs:
 
       - name: "Transload MLB"
         run: |
-          ls -lAog
+          chmod a+x ./transload_mlb_S01.sh
           ./transload_mlb_S01.sh
