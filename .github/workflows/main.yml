@@ -16,7 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
 
       - name: "Transload MLB"
         run: |
+          ls -lAog
           ./transload_mlb_S01.sh
